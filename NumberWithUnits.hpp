@@ -8,7 +8,7 @@ namespace ariel
     {
     private:
         double quantity;
-        string unit;
+        std::string unit;
 
     public:
         NumberWithUnits(double quantity, std::string unit)
@@ -22,31 +22,33 @@ namespace ariel
         static void read_units(std::ifstream &file);
 
         //Addition and Subtraction operators:
-        friend NumberWithUnits operator+(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend NumberWithUnits operator+=(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend NumberWithUnits operator+(const NumberWithUnits &num);
-        friend NumberWithUnits operator-(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend NumberWithUnits operator-=(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend NumberWithUnits operator-(const NumberWithUnits &num);
+        friend NumberWithUnits operator+(NumberWithUnits const &num1, NumberWithUnits const &num2);
+        friend NumberWithUnits &operator+=(NumberWithUnits &num1, NumberWithUnits const &num2);
+        friend NumberWithUnits &operator+(NumberWithUnits &num);
+        friend NumberWithUnits operator-(NumberWithUnits const &num1, NumberWithUnits const &num2);
+        friend NumberWithUnits &operator-=(NumberWithUnits &num1, NumberWithUnits const &num2);
+        friend NumberWithUnits &operator-(NumberWithUnits &num);
 
         //Comparison operators:
-        friend bool operator>(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend bool operator>=(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend bool operator<(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend bool operator<=(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend bool operator==(const NumberWithUnits &num1, const NumberWithUnits &num2);
-        friend bool operator!=(const NumberWithUnits &num1, const NumberWithUnits &num2);
+        friend bool operator>(NumberWithUnits const &num1, NumberWithUnits const &num2);
+        friend bool operator>=(NumberWithUnits const &num1, NumberWithUnits const &num2);
+        friend bool operator<(NumberWithUnits const &num1, NumberWithUnits const &num2);
+        friend bool operator<=(NumberWithUnits const &num1, NumberWithUnits const &num2);
+        friend bool operator==(NumberWithUnits const &num1, NumberWithUnits const &num2);
+        friend bool operator!=(NumberWithUnits const &num1, NumberWithUnits const &num2);
 
-        //Increment and Reduction operators:
-        friend NumberWithUnits operator++(const NumberWithUnits &num);
-        friend NumberWithUnits operator--(const NumberWithUnits &num);
+        //Increment and Decrement operators:
+        friend NumberWithUnits &operator++(NumberWithUnits &num);
+        friend NumberWithUnits operator++(NumberWithUnits &num, int);
+        friend NumberWithUnits &operator--(NumberWithUnits &num);
+        friend NumberWithUnits operator--(NumberWithUnits &num, int);
 
         //Multiplication operators:
-        friend NumberWithUnits operator*(double num1, const NumberWithUnits &num2);
-        friend NumberWithUnits operator*(const NumberWithUnits &num1, double num2);
+        friend NumberWithUnits operator*(double const num1, NumberWithUnits const &num2);
+        friend NumberWithUnits operator*(NumberWithUnits const &num1, double const num2);
 
         //Input and Output operators:
-        friend istream &operator>>(istream &is, const NumberWithUnits &num);
-        friend ostream &operator<<(ostream &os, const NumberWithUnits &num);
+        friend std::istream &operator>>(std::istream &is, NumberWithUnits const &num);
+        friend std::ostream &operator<<(std::ostream &os, NumberWithUnits const &num);
     };
 }
