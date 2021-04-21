@@ -10,10 +10,10 @@ namespace ariel
     //Addition and Subtraction operators:
     NumberWithUnits operator+(NumberWithUnits const &num1, NumberWithUnits const &num2) { return num1; }
     NumberWithUnits &operator+=(NumberWithUnits &num1, NumberWithUnits const &num2) { return num1; }
-    NumberWithUnits &operator+(NumberWithUnits &num) {return num;}
+    NumberWithUnits &operator+(NumberWithUnits &num) { return num; }
     NumberWithUnits operator-(NumberWithUnits const &num1, NumberWithUnits const &num2) { return num1; }
-    NumberWithUnits &operator-=(NumberWithUnits &num1, NumberWithUnits const &num2) {return num1;}
-    NumberWithUnits &operator-(NumberWithUnits &num) {return num;}
+    NumberWithUnits &operator-=(NumberWithUnits &num1, NumberWithUnits const &num2) { return num1; }
+    NumberWithUnits &operator-(NumberWithUnits &num) { return num; }
 
     //Comparison operators:
     bool operator>(NumberWithUnits const &num1, NumberWithUnits const &num2) { return true; }
@@ -24,10 +24,10 @@ namespace ariel
     bool operator!=(NumberWithUnits const &num1, NumberWithUnits const &num2) { return true; }
 
     //Increment and Reduction operators:
-    NumberWithUnits &operator++(NumberWithUnits &num) {return num;}
-    NumberWithUnits operator++(NumberWithUnits &num, int) {return num;}
-    NumberWithUnits &operator--(NumberWithUnits &num) {return num;}
-    NumberWithUnits operator--(NumberWithUnits &num, int) {return num;}
+    NumberWithUnits &operator++(NumberWithUnits &num) { return num; }
+    NumberWithUnits operator++(NumberWithUnits &num, int) { return num; }
+    NumberWithUnits &operator--(NumberWithUnits &num) { return num; }
+    NumberWithUnits operator--(NumberWithUnits &num, int) { return num; }
 
     //Multiplication operators:
     NumberWithUnits operator*(double const num1, NumberWithUnits const &num2) { return num2; }

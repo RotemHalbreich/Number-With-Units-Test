@@ -94,8 +94,3 @@ TEST_CASE("Logical operators test:")
     CHECK_NE(NumberWithUnits{1999, "g"}, NumberWithUnits{2, "kg"});
     CHECK(NumberWithUnits{1999, "g"} != NumberWithUnits{2, "kg"});
 }
-
-TEST_CASE("Stream I/O test:")
-{
-    NumberWithUnits::read_units(file);
-}
